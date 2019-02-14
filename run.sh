@@ -1,2 +1,19 @@
-while true; do sleep 15 ; echo "cobo"; done &
-while true; do sleep 12 ; echo "saurius"; done
+#!/bin/bash                                                                
+                                                                           
+echo "This is a idle script (infinite loop) to keep container running."    
+echo "Please replace this script."                                         
+                                                                           
+cleanup ()                                                                 
+{                                                                          
+  kill -s SIGTERM $!                                                         
+  exit 0                                                                     
+}                                                                          
+                                                                           
+trap cleanup SIGINT SIGTERM                                                
+                                                                           
+while [ 1 ]                                                                
+do                                                                         
+  sleep 5 & 
+  echo cobosaurius &                                                            
+  wait $!                                                                
+done
