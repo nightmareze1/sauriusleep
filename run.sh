@@ -13,7 +13,7 @@ trap cleanup SIGINT SIGTERM
                                                                            
 while [ 1 ]                                                                
 do                                                                         
-  sleep 5 & 
-  echo cobosaurius &                                                            
+  sleep 1
+  echo cobosaurius                                                             
   wait $!                                                                
 done
